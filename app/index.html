@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="uiRouterExample">
+    <head>
+        <title>ui-router introduction</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="../bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        
+        <!-- twitter bootstrap JS file -->
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- angular js -->
+        <script src="../bower_components/angular/angular.min.js" type="text/javascript"></script>
+        
+        <!-- angualr-resource -->
+        <script src="../bower_components/angular-resource/angular-resource.min.js" type="text/javascript"></script>
+        
+        <!-- angular sanitize -->
+        <script src="../bower_components/angular-sanitize/angular-sanitize.min.js" type="text/javascript"></script>
+        
+        <!-- Angular UI-router -->
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js" type="text/javascript"></script>
+        
+        <!-- Angular Bootstrap -->
+        <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+        
+        <!-- bootstrap min js -->
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        
+        <!-- App JS -->
+        <script src="app.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="container">
+        <h4>
+            A brief introduction to <strong class="text-danger">ui-router</strong>
+            
+        </h4>
+        <div>
+            <ul class="nav nav-pills">
+                <li><a href="#/home">Home</a></li>
+                <li><a href="#/list">Shopping List</a></li>
+            </ul>
+        </div>
+        <div ui-view></div>
+  </div>
+    </body>
+</html>
