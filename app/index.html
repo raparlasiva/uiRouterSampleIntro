@@ -33,21 +33,32 @@
         
         <!-- named View JS -->
         <script src="namedViews/namedView.js" type="text/javascript"></script>
+        
+        <!-- Alt-One JS -->
+        <script src="namedViews/alt-one/alt-one.js" type="text/javascript"></script>
+        
+        <!-- Alt-Two JS -->
+        <script src="namedViews/alt-two/alt-two.js" type="text/javascript"></script>
+        
+        <!-- Alt-Three JS -->
+        <script src="namedViews/alt-three/alt-three.js" type="text/javascript"></script>
+        
+        <!-- Blink JS -->
+        <script src="../common/directives/blink/blink.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="container">
-        <h4>
-            A brief introduction to <strong class="text-danger">ui-router</strong>
-            
-        </h4>
-        <div>
-            <ul class="nav nav-pills">
-                <li><a href="#/home">Home</a></li>
-                <li><a href="#/list">Shopping List</a></li>
-                <li><a href="#/namedView/main">Named Views</a></li>
-            </ul>
+            <h4>
+                A brief introduction to <strong class="text-danger">ui-router</strong>
+            </h4>
+            <div>
+                <ul class="nav nav-pills">
+                    <li><a href="#/home">Home</a></li>
+                    <li><a href="#/list">Shopping List</a></li>
+                    <li><a href="#/namedView/main">Named Views</a></li>
+                </ul>
+            </div>
+            <div ui-view></div>
         </div>
-        <div ui-view></div>
-  </div>
     </body>
 </html>

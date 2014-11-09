@@ -1,32 +1,32 @@
 (function() {
 'use strict';
 
-var namedViewModule = angular.module('namedViewModule', [])
+var namedViewModule = angular.module('namedViewModule', [
+    "altOneModule",
+    "altTwoModule",
+    "altThreeModule",
+    "blink"
+])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('namedView.main', {
             url:'/main',
             views: {
-                'header@sampleNamedViews' : {
-                    templateUrl: '../common/header.tpl.html',
+                'header@namedView' : {
+                    templateUrl: '../common/templates/header.tpl.html',
                 },
-                'sidebar@sampleNamedViews' : {
-                    templateUrl: '../common/sidebar.tpl.html',
+                'sidebar@namedView' : {
+                    templateUrl: '../common/templates/sidebar.tpl.html',
                 },
-                'content@sampleNamedViews' : {
-                    templateUrl: '../common/content.tpl.html',
+                'content@namedView' : {
+                    templateUrl: '../common/templates/content.tpl.html',
                 },
-                'footer@sampleNamedViews' : {
-                    templateUrl: '../common/footer.tpl.html',
+                'footer@namedView' : {
+                    templateUrl: '../common/templates/footer.tpl.html',
                 }
             }
         })
-        .state('namedView.main.home', {
-            url:'/main',
-           
-        })
-          
 }]);
 }());
 
