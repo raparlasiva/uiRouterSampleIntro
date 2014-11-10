@@ -58,6 +58,10 @@
                 data: {
                   userRepo:{
                         userRepoTblData : [],
+                        userRepoUrl     : [],
+                        pagination      : "1",
+                        numPerPage      : "5",
+                        filteredUserRepoTblData : []
                         //order :'name',
                         //reverse : false
                       //sortingOrderShow                : "name",
@@ -65,10 +69,78 @@
                       //previousSortingOrder            : "",
                   }  
                 },
-                controller:function($scope,$state,$stateParams,getGitHubSvc){
+                controller:function($scope,$state,$stateParams,getGitHubSvc,$http){
                     $scope.order   = 'name';
                     $scope.reverse = false;
-                    $state.current.data.userRepo.userRepoTblData = getGitHubSvc.getSivaService.query();
+                    $scope.begin   = 0;
+                    $scope.end     = 0;
+                    
+                    $scope.beginEndFunction  = function(){
+                        $scope.begin = (($state.current.data.userRepo.pagination - 1) * $state.current.data.userRepo.numPerPage);
+                        console.info($scope.begin);
+                        $scope.end   = $scope.begin*1 + $state.current.data.userRepo.numPerPage*1;
+                        console.info($scope.end);
+                    };
+                    
+                    $scope.$watch('$state.current.data.userRepo.pagination', function() {
+                        $scope.begin = Math.ceil((($state.current.data.userRepo.pagination - 1) * $state.current.data.userRepo.numPerPage));
+                        console.info($scope.begin);
+                        $scope.end   = $scope.begin*1 + $state.current.data.userRepo.numPerPage*1;
+                        
+                        console.info($scope.end);
+                        
+                        $state.current.data.userRepo.filteredUserRepoTblData = $state.current.data.userRepo.userRepoTblData.slice($scope.begin, $scope.end);
+                        
+                        //$scope.end = $state.current.data.userRepo.userRepoTblData.length;
+                        
+                        if($scope.end > $state.current.data.userRepo.userRepoTblData.length) 
+                        {
+                            $scope.end = $state.current.data.userRepo.userRepoTblData.length;
+                        }
+                    });
+
+                    $scope.$watch('$state.current.data.userRepo.numPerPage', function() {
+                        $scope.beginEndFunction();
+                        $state.current.data.userRepo.filteredUserRepoTblData = $state.current.data.userRepo.userRepoTblData.slice($scope.begin, $scope.end);
+                    });
+                    $scope.commonFilterConditions = function() {
+    
+                        //numPerPage
+                        $scope.beginEndFunction();
+                        if($state.current.data.userRepo.userRepoTblData) 
+                        {
+                            if($state.current.data.userRepo.userRepoTblData.length < $state.current.data.userRepo.numPerPage) {
+                              $scope.end = $state.current.data.userRepo.userRepoTblData.length*1;
+                            }
+                            if($scope.end > $state.current.data.userRepo.userRepoTblData.length) {
+                              $scope.end = $state.current.data.userRepo.userRepoTblData.length*1;
+                            }
+                            if($scope.end < $state.current.data.userRepo.userRepoTblData.length && $state.current.data.userRepo.userRepoTblData.length > $state.current.data.userRepo.numPerPage) {
+                              $scope.end = $scope.begin + $state.current.data.userRepo.numPerPage*1;
+                            }
+                            $state.current.data.userRepo.filteredUserRepoTblData = $state.current.data.userRepo.userRepoTblData.slice($scope.begin, $scope.end);
+                        }
+                    };
+                    
+                    $state.current.data.userRepo.userRepoUrl = getGitHubSvc.getSivaRepoUrl.get(function(response){
+                        console.info($state.current.data.userRepo.userRepoUrl.repos_url);
+                        
+                        $http.get($state.current.data.userRepo.userRepoUrl.repos_url).success(function(data, status, headers, config) {
+                            // this callback will be called asynchronously
+                            // when the response is available
+                            console.info(data);
+                            $state.current.data.userRepo.userRepoTblData = data;
+                            $scope.commonFilterConditions();
+                        }).
+                        error(function(data, status, headers, config) {
+                            // called asynchronously if an error occurs
+                            // or server returns response with an error status.
+                        });
+                    });
+                    
+                    
+                    
+                    
                    
                 }
                 
@@ -96,7 +168,9 @@
             });
         };
     })
-    
+    .directive("pagi", function() {
+        
+    })
     .directive("sort", function() {
         return {
             restrict: 'A',
@@ -126,5 +200,6 @@
             }
         }
     });
+            
 
 }());
