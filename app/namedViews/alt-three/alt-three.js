@@ -15,10 +15,10 @@ var altThreeModule = angular.module('altThreeModule', [])
                 'header@namedView': {
                   templateUrl: 'namedViews/alt-three/partials/alt-three.header.tpl.html'
                 },
-                'one@app.namedView.main.alt-Three': {
+                'one@namedView.main.alt-Three': {
                     template: '<div class="alert-info">Sub One</div>'
                 },
-                'two@app.namedView.main.alt-Three': {
+                'two@namedView.main.alt-Three': {
                     template: '<div class="alert-success">Sub Two</div>'
                 }
             }
