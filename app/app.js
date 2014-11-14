@@ -5,7 +5,8 @@
         "ui.router",
         "ngSanitize",
         "namedViewModule",
-        "gitHubServices"
+        "gitHubServices",
+        "directiveLessonModule"
     ])
     .constant('API_URL','https://api.github.com/users/')
     
@@ -41,6 +42,15 @@
                     '@' : {
                         templateUrl: 'namedViews/partials/namedView.html',
                         //controller: 'namedView.Ctrl'
+                    }
+                }
+            })
+            .state('directiveLesson',{
+                url:'/directiveLesson',
+                abstract:true,
+                views:{
+                    '@' : {
+                        templateUrl: 'directiveLesson/partials/directiveLesson.html',
                     }
                 }
             })
@@ -137,13 +147,7 @@
                             // or server returns response with an error status.
                         });
                     });
-                    
-                    
-                    
-                    
-                   
                 }
-                
             })
     })
     .controller("ListCtrl", function($scope) {
@@ -168,9 +172,6 @@
             });
         };
     })
-    .directive("pagi", function() {
-        
-    })
     .directive("sort", function() {
         return {
             restrict: 'A',
@@ -187,6 +188,7 @@
             },
             link: function(scope, element, attrs) {
                 scope.onClick = function () {
+                    
                     if( scope.order === scope.by ) 
                     {
                        scope.reverse = !scope.reverse 
