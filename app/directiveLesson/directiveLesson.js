@@ -2,7 +2,8 @@
 'use strict';
 
 var directiveLessonModule = angular.module('directiveLessonModule', [
-    "directiveLessonOneModule"
+    "directiveLessonOneModule",
+    "directiveLessonTwoModule"
 ])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {

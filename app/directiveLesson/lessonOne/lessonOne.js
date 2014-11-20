@@ -1,7 +1,11 @@
 (function() {
 'use strict';
 
-var directiveLessonOneModule = angular.module('directiveLessonOneModule', [])
+var directiveLessonOneModule = angular.module('directiveLessonOneModule', [
+    'superhero',
+    'directiveLessonsController'
+    
+])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $stateProvider
@@ -9,7 +13,8 @@ var directiveLessonOneModule = angular.module('directiveLessonOneModule', [])
             url:'/lessonOne',
             views: {
                 'content@directiveLesson' : {
-                    template: '<p>Directive Lesson One goes here..</p>',
+                    templateUrl: 'directiveLesson/lessonOne/partials/lessonOne.html',
+                    controller:'directive.lessons.Ctrl'
                 }
             }
         })
