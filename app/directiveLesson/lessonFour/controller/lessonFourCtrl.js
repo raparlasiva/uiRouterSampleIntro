@@ -7,6 +7,10 @@
         function($scope,$stateParams,$state,$filter,$modal,$timeout,$interval) {
            console.log("lesson four ctrl");
            
+           $scope.callHome = function(message){
+             alert(message +" called home");  
+           };
+           
     }]);
 
 }());
