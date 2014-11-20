@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="uiRouterExample">
     <head>
-        <title ng-bind="$state.current.name + ' - ui-router'">ui-router</title>
+        <!--<title ng-bind="$state.current.name + ' - ui-router'">ui-router</title>-->
+        <title ng-bind="$state.current.data.pageTitle + ' - ui-router'">ui-router</title>
+        
         <meta charset="UTF-8">
         <!-- twitter bootstrap JS file -->
         <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>

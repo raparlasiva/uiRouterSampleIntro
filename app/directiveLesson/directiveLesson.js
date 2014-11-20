@@ -12,6 +12,9 @@ var directiveLessonModule = angular.module('directiveLessonModule', [
     $stateProvider
         .state('directiveLesson.main', {
             url:'/main',
+            data:{
+                pageTitle:"Main"
+            },
             views: {
                 'header@directiveLesson' : {
                     templateUrl: '../common/templates/headerTempDir.tpl.html',

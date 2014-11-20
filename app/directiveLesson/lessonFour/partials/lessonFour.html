@@ -9,6 +9,31 @@
 </call-Phone>
 <hr>
 
+<h4>Isolate Scope "@"</h4>
+<p>
+    <strong>
+        this is doing the same thing as the attrs.flavorview and assiging back to the isolate scope
+    </strong>
+</p>
+<input type="text" name="whatCoffe" ng-model="whatCoffe" >
+<div drink flavorview="{{whatCoffe}}" size="small"></div>
+
+<hr>
 <h4>Isolate Scope "="</h4>
+From Ctrl
+<input type="text" name="howAreYouFeeling" ng-model="howAreYouFeeling" >
+From Ctrl
+<input type="text" name="anythingMoreYouWantToSay" ng-model="anythingMoreYouWantToSay" >
+<input type="text" name="inGeneral" ng-model="inGeneral" >
+
+<br/>
+<br/><br/>
+From Dir - attributes should be referenced in lower case to access their values in the directory
+<div feel-Good howYouFeel="howAreYouFeeling" addMore="anythingMoreYouWantToSay" inGeneral="inGeneral"></div>
+
+
+
+
+
 
 

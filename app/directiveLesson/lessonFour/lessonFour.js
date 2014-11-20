@@ -3,7 +3,7 @@
 
 var directiveLessonFourModule = angular.module('directiveLessonFourModule', [
     'lessonFourController',
-    'andScopeApp'
+    'andAtEqualScopeApp'
     
 ])
 
@@ -11,6 +11,9 @@ var directiveLessonFourModule = angular.module('directiveLessonFourModule', [
     $stateProvider
         .state('directiveLesson.main.lessonFour', {
             url:'/lessonFour',
+            data:{
+              pageTitle:"&,@,= Directive"  
+            },
             views: {
                 'content@directiveLesson' : {
                    

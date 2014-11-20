@@ -12,6 +12,9 @@ var namedViewModule = angular.module('namedViewModule', [
     $stateProvider
         .state('namedView.main', {
             url:'/main',
+            data:{
+                pageTitle:"named Views"
+            },
             views: {
                 'header@namedView' : {
                     templateUrl: '../common/templates/header.tpl.html',
