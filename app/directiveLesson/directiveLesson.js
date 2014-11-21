@@ -6,7 +6,8 @@ var directiveLessonModule = angular.module('directiveLessonModule', [
     "directiveLessonTwoModule",
     "directiveLessonThreeModule",
     "directiveLessonFourModule",
-    "directiveLessonFiveModule"
+    "directiveLessonFiveModule",
+    "directiveLessonSixModule"
 ])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
