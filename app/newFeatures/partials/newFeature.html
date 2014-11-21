@@ -1,0 +1,59 @@
+<div class="container">
+  <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4 active">
+            <h2>State Less Filter</h2>
+            <p>Filters in AngularJS can be a big performance hog. As of Angular 1.3, filters are "stateless" by default. This means that given the same input, a filter will not even run, and simply return the previous value. </p>
+            <p><a class="btn btn-default" <a ui-sref="newFeatures.statelessDemo"  role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Bind Once</h2>
+            <p>AngularJS's two-way binding is one of the "killer features" of the framework.
+                The problem is that too many bindings can cause performance issues! 
+                Many times, all you need to do is bind a single time to get the data to display, and don't need dynamic two-way binding. 
+                In Angular 1.3, they've added new syntax to enable one-time data bindings. </p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>$q constructor</h2>
+            <p>In AngularJS 1.3 there is a nice shorthand for $q.defer(). In fact, it removes the need for calling defer at all!.</p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 active">
+            <h2>$scope.$watchGroup</h2>
+            <p>With Angular 1.3 you now have access to $scope.$watchGroup. This allows you to monitor an array of expressions for change. This is useful when you want to perform the some logic when any item in a group changes.</p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Updates to forms</h2>
+            <p>With the release of AngularJS 1.3, we get some handy additions to forms, 
+                including a submitted state and the ability to bind input field names to an expression.. </p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>ng-model-options updateOn and debounce</h2>
+            <p>Now in Angular 1.3 you can cause updates to your ngModels to only occur for a given event (blur, focus, click, etc);
+                Debouncing means that only 1 action will be registered within a specific time. This is handy for text inputs, where an action triggers a process (such as asynchronous search).
+                ngModelOptions allows you to debounce your ngModel inputs in AngularJS apps..</p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 active">
+            <h2>ng-model-options getters and setters</h2>
+            <p>With ngModelOptions in Angular 1.3 you can turn your model into a getter/setter function to have greater control over your model.</p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>ngModelOptions allows you to set a timezone on your model.</h2>
+            <p>ngModelOptions in angular allows you to set several handy options of your ngModels, including the timezone for dealing with dates and times.</p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+    </div>
+    <hr>
+    <footer class="text-center">
+            <p>Presented by Siva Raparla &copy; Company 2014</p>
+    </footer>
+</div> <!-- /container -->

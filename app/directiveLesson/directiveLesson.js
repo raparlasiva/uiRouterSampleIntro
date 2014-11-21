@@ -8,9 +8,9 @@ var directiveLessonModule = angular.module('directiveLessonModule', [
     "directiveLessonFourModule",
     "directiveLessonFiveModule",
     "directiveLessonSixModule"
-])
+]);
 
-.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+directiveLessonModule.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('directiveLesson.main', {
             url:'/main',

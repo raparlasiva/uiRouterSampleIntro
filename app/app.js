@@ -6,7 +6,8 @@
         "ngSanitize",
         "namedViewModule",
         "gitHubServices",
-        "directiveLessonModule"
+        "directiveLessonModule",
+        "newFeatureModuleApp"
     ])
     .constant('API_URL','https://api.github.com/users/')
     

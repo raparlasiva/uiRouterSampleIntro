@@ -81,6 +81,9 @@
         <script src="directiveLesson/lessonSix/lessonSix.js" type="text/javascript"></script>
         <script src="directiveLesson/lessonSix/controller/lessonSixCtrl.js" type="text/javascript"></script>
         <script src="directiveLesson/lessonSix/directives/lessonSixDir.js" type="text/javascript"></script>
+        
+        <!-- Angular JS -->
+        <script src="newFeatures/newFeature.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="container">
@@ -89,12 +92,12 @@
             </h4>
             <div>
                 <ul class="nav nav-pills">
-                    <li><a href="#/home">Home</a></li>
-                    <li><a href="#/list">Shopping List</a></li>
-                    <li><a href="#/namedView/main">Named Views</a></li>
-                    <li><a href="#/siva">List Siva Repo</a></li>
-                    <li><a ui-sref="directiveLesson.main">Directive Lessons</a></li>
-                    <li><a ui-sref="directiveLesson.main">AngularJS New Features</a></li>
+                    <li ng-class="{active:$state.includes('home')}"><a href="#/home">Home</a></li>
+                    <li ng-class="{active:$state.includes('list')}"><a href="#/list">Shopping List</a></li>
+                    <li ng-class="{active:$state.includes('namedView.main')}"><a href="#/namedView/main">Named Views</a></li>
+                    <li ng-class="{active:$state.includes('siva')}"><a href="#/siva">List Siva Repo</a></li>
+                    <li ng-class="{active:$state.includes('directiveLesson.main')}"><a ui-sref="directiveLesson.main">Directive Lessons</a></li>
+                    <li ng-class="{active:$state.includes('newFeatures')}"><a ui-sref="newFeatures">AngularJS New Features</a></li>
                 </ul>
             </div>
             <div ui-view>
