@@ -7,11 +7,14 @@
         // returning an object
         return{
             scope:{
-                dial:"&"
+                //dialHere:"&selectVal",
+                dialHere:"&selectVal"
             },
             template:'<input type="text" ng-model="someValue">'+
-                    '<button class="btn btn-info" ng-click="dial({message:someValue})"> call home</button>'
-           
+                    '<button class="btn btn-info" ng-click="dialHere({message:someValue})"> call home</button>',
+            link:function(scope,element,attrs){
+                console.info(attrs);
+            }
         }    
     }]);
     andAtEqualScopeApp.directive("drink",['$state',function($state){
@@ -40,9 +43,9 @@
             
             scope:{
                // two way data binding
-                howYouFeelFrmDir:"=howyoufeel",//attributes should be referenced in lower case
-                addMoreFromDir:"=addmore",//attributes should be referenced in lower case
-                inGeneral:"=ingeneral"
+                howYouFeelFrmDir:"=howYouFeel",//attributes should be referenced in lower case
+                addMoreFromDir:"=addMore",//attributes should be referenced in lower case
+                inGeneral:"=inGeneral"
             },
             template: '<input type="text" ng-model="howYouFeelFrmDir">'+
                        '<input type="text" ng-model="addMoreFromDir">'+
