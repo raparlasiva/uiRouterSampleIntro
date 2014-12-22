@@ -7,7 +7,8 @@
         "namedViewModule",
         "gitHubServices",
         "directiveLessonModule",
-        "newFeatureModuleApp"
+        "newFeatureModuleApp",
+        "expenseModule"
     ])
     .constant('API_URL','https://api.github.com/users/')
     
